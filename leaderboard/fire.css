@@ -1,0 +1,32 @@
+
+
+#Title {
+  color: white;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 60px;
+  line-height: 100px;
+  text-align: center;
+  margin: 0 auto;
+  height: 100px;
+  max-width: 800px;
+  background-color: #DC143C;
+  position: relative;
+  top: 50px;
+
+
+}
+
+#Usernames {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: #DC143C;
+  font-size: 30px;
+
+}
+
+body {
+  background-color: #FFD700;
+
+}

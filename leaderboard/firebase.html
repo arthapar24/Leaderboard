@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="fire.css">
+        <title>Document</title>
+    </head>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script type="text/javascript">
+        var config = {
+            apiKey: "AIzaSyAcPiM5u26hO8mdo5-xGOMof2AX5ju4jyU",
+            authDomain: "auth-b3878.firebaseapp.com",
+            databaseURL: "https://auth-b3878.firebaseio.com/",
+            projectId: "auth-b3878",
+            storageBucket: "auth-b3878.appspot.com",
+            messagingSenderId: "813145341914"
+        };
+        firebase.initializeApp(config);
+
+        var ref = firebase.database().ref("Usernames");
+
+
+
+var playerArray = [];
+
+        ref.on("value", function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                data = childSnapshot.val();
+                console.log(data);
+                playerArray.push(data);
+                playerArray.sort();
+                playerArray.sort(function(a,b) {return (a.Score > b.Score) ? -1 : ((b.Score > a.Score) ? 1 : 0);
+
+
+                } );
+                playerArray.toString();
+                document.getElementById("Usernames").innerText += data.Name + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.Score + " pts\n";
+
+
+
+
+          });
+
+        });
+
+        console.log(playerArray);
+
+
+
+
+    </script>
+
+    <body>
+
+<div id="Title">SCOREBOARD</div>
+        <div id="Box"></div>
+        <div id="Usernames"></div>
+
+
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+</html>
