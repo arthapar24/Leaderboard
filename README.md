@@ -1,6 +1,6 @@
 # Leaderboard
 
-This is an html webpage meant to be synced with the SpaceGame app in a separate file. 
+This is a webpage meant to be synced with the SpaceGame app in a separate file. 
 
 # To use
 
